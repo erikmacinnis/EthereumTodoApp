@@ -1,0 +1,29 @@
+body {
+    background-image: url("https://images.unsplash.com/photo-1642104704074-907c0698cbd9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80");
+}
+
+div div {
+    width: 100%
+}
+
+.ui.selection.dropdown .menu {
+    max-height: 1000px
+}
+
+.ui.dimmer {
+    height: 100vh;
+}
+
+.ui.container {
+    margin: 70px 50px;
+}
+
+.ddl {
+    padding-bottom: 50px;
+}
+
+.createTask {
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
