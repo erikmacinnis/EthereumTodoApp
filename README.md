@@ -9,6 +9,6 @@
 * Simple Ethereum Todo App 
 * User can create a task 
 * User can complete task
-* User can check out all task that he has completed
+* User can see all task that he has completed
 * This app doesn't have much functionality with the MetaMask wallet like the MaticJumpingGame does
 * The app expects the user to have MetaMask open on the Rinkeby Network
