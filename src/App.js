@@ -14,10 +14,24 @@ const App = () => {
     const [completed, setCompleted] = useState([]);
     const [resetTasks, setResetTasks] = useState(false);
 
-    useEffect(async() => {
-        const initialCount = await todo.methods.count().call();
-        setCount(initialCount);
-        setLoading(false);
+    useEffect(() => {
+        async function initialFunction() {
+            const initialCount = await todo.methods.count().call();
+            setCount(initialCount);
+            setLoading(false);
+        }
+        initialFunction();
+    }, [])
+
+    useEffect(() => {
+        const chainId = 4;
+        async function switchNetwork() {
+            await window.ethereum.request({method: 'wallet_switchEthereumChain', params: [{chainId: "0x" + chainId.toString(16)}]})
+            setLoading(false)
+        }
+        if (window.ethereum.networkVersion !== chainId) {
+            switchNetwork()
+        }
     }, [])
 
     if (!loading){

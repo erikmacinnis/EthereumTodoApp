@@ -14,7 +14,11 @@ const CreateTask = ({setCount, count, setResetTasks, resetTasks}) => {
         setLoading(true);
         setCount(parseInt(count) + 1);
         const accounts = await web3.eth.getAccounts();
-        await todo.methods.createTask(content).send({from: accounts[0]});
+        try {
+            await todo.methods.createTask(content).send({from: accounts[0]});
+        } catch(err) {
+            setLoading(false);
+        }
         setLoading(false);
         setResetTasks(!resetTasks);
     }
