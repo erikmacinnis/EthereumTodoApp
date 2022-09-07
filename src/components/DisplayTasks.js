@@ -13,7 +13,6 @@ const DisplayTasks = ({count, setCompleted, resetTasks}) => {
     useEffect( () => {
         setLoading(true);
         createTaskList();
-        console.log(count);
     },[resetTasks])
 
     useEffect( () => {
@@ -32,7 +31,7 @@ const DisplayTasks = ({count, setCompleted, resetTasks}) => {
                 await todo.methods.checkTask(id).send({from: accounts[0]});
 
             }catch(err) {
-                console.log('There was an error with the transaction')
+                window.alert("The Transaction didn't go through\n Please try again")
             }
         }
     }
@@ -78,7 +77,6 @@ const DisplayTasks = ({count, setCompleted, resetTasks}) => {
         const taskRows = [];
         let i;
         for (i = 3; i < length; i += 3){
-            console.log(tasks[1]);
             let taskRow = (
                 <Grid.Row key={i / 3}>
                     <Grid.Column textAlign='center'>
@@ -132,8 +130,6 @@ const DisplayTasks = ({count, setCompleted, resetTasks}) => {
                                    type="checkbox"
                                    name={tasks[length - 1].id}
                                    onClick={() => {
-                                    console.log('i value')
-                                    console.log(i-2);
                                     checkTask(tasks[length - 1].id)}}
                                    ></input>
                                    <label>{tasks[length - 1].content}</label>
