@@ -16,6 +16,7 @@ const App = () => {
 
     useEffect(() => {
         async function initialFunction() {
+            console.log("initial")
             const initialCount = await todo.methods.count().call();
             setCount(initialCount);
             setLoading(false);
@@ -29,8 +30,14 @@ const App = () => {
             await window.ethereum.request({method: 'wallet_switchEthereumChain', params: [{chainId: "0x" + chainId.toString(16)}]})
             setLoading(false)
         }
-        if (window.ethereum.networkVersion !== chainId) {
-            switchNetwork()
+        setTimeout(checkSwitch, 1000);
+
+        function checkSwitch(){   
+            console.log(window.ethereum.networkVersion)
+            if (window.ethereum.networkVersion === chainId) {
+                console.log("switching")
+                switchNetwork()
+            }
         }
     }, [])
 
