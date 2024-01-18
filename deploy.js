@@ -1,7 +1,7 @@
 const HDwalletProvider = require('@truffle/hdwallet-provider');
 const provider = new HDwalletProvider(
-    'exercise uncover canal feel post merry ski stairs awake giggle mixture engage',
-    'https://rinkeby.infura.io/v3/e74aebcb315d408089b16cb32f4e5f69'
+    '<seed phrase>',
+    'https://rinkeby.infura.io/v3/<Add your api key>'
 )
 
 const Web3 = require('web3'); // this is the web3 module, not the web3.js file
